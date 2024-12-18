@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 
 const MainPageContent = () => {
   return (
@@ -16,8 +17,20 @@ const MainPageContent = () => {
             <p className="mx-auto mb-6 w-48 border border-red-600 lg:mx-0"></p>
             <p className="mb-6 text-xl italic text-gray-300">"We are passionate about helping clients achieve their goals ..."</p>
             <div className="space-x-4 text-white">
-              <button className="rounded bg-red-500 px-4 py-2 hover:bg-red-600">Our Services</button>
-              <button className="rounded border border-white px-4 py-2 hover:bg-white hover:text-blue-900">Contact Us</button>
+              <Link
+                key="services"
+                href="/services"
+                className="rounded bg-red-500 px-4 py-3 hover:bg-red-600"
+              >
+                Our Service
+              </Link>
+              <Link
+                key="faq"
+                href="mailto:support@hunterglobal.com"
+                className="rounded border border-white px-4 py-3 hover:bg-white hover:text-blue-900"
+              >
+                Contact Us
+              </Link>
             </div>
           </div>
         </header>

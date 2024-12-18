@@ -75,19 +75,22 @@ export default function FaqPage() {
               <div
                 key={faq.id}
                 onClick={() => toggleFaq(faq.id)}
-                className={`rounded-lg border border-gray-200 p-6 shadow-sm transition-all duration-300 ${activeFaq === faq.id
-                  ? 'bg-blue-100'
-                  : 'bg-white hover:bg-blue-50'
+                className={`rounded-lg border border-gray-200 p-6 shadow-sm hover:cursor-pointer transition-all duration-300 ${activeFaq === faq.id
+                  ? 'bg-blue-50 text-red-600'
+                  : 'bg-white hover:bg-blue-50 hover:text-red-600 text-blue-600'
                   }`}
               >
-                <h3
-                  className={`mb-3 text-xl font-semibold transition-colors duration-300 ${activeFaq === faq.id
-                    ? 'text-blue-900'
-                    : 'text-gray-900 hover:text-blue-600'
-                    }`}
-                >
-                  {faq.question}
-                </h3>
+                <div className="flex justify-between">
+                  <h3
+                    className="mb-3 text-xl font-semibold"
+                  >
+                    {faq.question}
+                  </h3>
+                  <span
+                    className="text-xl font-bold p-2 text-center">
+                    {activeFaq === faq.id ? '-' : '+'}
+                  </span>
+                </div>
                 {activeFaq === faq.id && (
                   <p className="text-gray-600">{faq.answer}</p>
                 )}
@@ -104,14 +107,14 @@ export default function FaqPage() {
               Our team is here to help. Contact us for personalized assistance.
             </p>
             <a
-              href="/contact"
+              href="mailto:support@hunterglobal.com"
               className="inline-block rounded-full bg-blue-600 px-8 py-3 text-white transition-colors hover:bg-blue-700"
             >
               Contact Support
             </a>
           </div>
         </div>
-      </main>
-    </div>
+      </main >
+    </div >
   );
 }
