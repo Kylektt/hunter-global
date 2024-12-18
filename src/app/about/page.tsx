@@ -50,11 +50,11 @@ export default function AboutPage() {
             </div>
             <div className="flex w-full items-start justify-center lg:justify-start">
               <div className="relative h-full w-full rounded-3xl border-gray-200 sm:h-[646px] sm:w-[564px] sm:border sm:bg-gray-100">
-                <img 
+                {/* <img 
                   className="h-full w-full rounded-3xl object-cover sm:ml-5 sm:mt-5" 
                   src="https://images.stockcake.com/public/4/4/f/44f81919-8330-4390-ad1d-d47d1b365a5d_medium/global-business-model-stockcake.jpg" 
                   alt="about Us image" 
-                />
+                /> */}
               </div>
             </div>
           </div>

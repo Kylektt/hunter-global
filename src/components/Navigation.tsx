@@ -14,7 +14,7 @@ const Navigation = () => {
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
     { href: "/clients", label: "Clients" },
-    { href: "/products", label: "Products" },
+    // { href: "/products", label: "Products" },
     { href: "/faq", label: "FAQ" },
   ];
 
@@ -27,23 +27,23 @@ const Navigation = () => {
         </Link>
 
         {/* Mobile Menu Button */}
-        <button 
-          className="focus:outline-none md:hidden" 
+        <button
+          className="focus:outline-none md:hidden"
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
         >
-          <svg 
-            className="h-6 w-6 text-white" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24" 
+          <svg
+            className="h-6 w-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth="2" 
-              d="M4 6h16M4 12h16M4 18h16" 
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
             />
           </svg>
         </button>
@@ -63,10 +63,9 @@ const Navigation = () => {
       </div>
 
       {/* Mobile Links */}
-      <div 
-        className={`${
-          isMobileMenuOpen ? 'flex' : 'hidden'
-        } flex-col space-y-4 bg-blue-900 px-4 py-4 text-white md:hidden`}
+      <div
+        className={`${isMobileMenuOpen ? 'flex' : 'hidden'
+          } flex-col space-y-4 bg-blue-900 px-4 py-4 text-white md:hidden`}
       >
         {navLinks.map((link) => (
           <Link

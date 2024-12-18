@@ -1,4 +1,5 @@
-import React from 'react';
+'use client'
+import React, { useState } from 'react';
 
 interface FaqItem {
   id: string;
@@ -7,32 +8,43 @@ interface FaqItem {
 }
 
 export default function FaqPage() {
+  const [activeFaq, setActiveFaq] = useState<string | null>(null);
+
+  const toggleFaq = (id: string) => {
+    setActiveFaq((prev) => (prev === id ? null : id));
+  };
+
   const faqs: FaqItem[] = [
     {
       id: 'faq1',
       question: 'What services does HunterGlobal offer?',
-      answer: 'HunterGlobal specializes in international trade services, including import/export solutions, trade finance, logistics management, and market analysis. We help businesses connect across global markets and streamline their trading operations.'
+      answer:
+        'HunterGlobal specializes in international trade services, including import/export solutions, trade finance, logistics management, and market analysis. We help businesses connect across global markets and streamline their trading operations.',
     },
     {
       id: 'faq2',
       question: 'How do I start trading with HunterGlobal?',
-      answer: 'Getting started is simple. Contact our team through our website or email, and our representatives will guide you through our onboarding process, assess your needs, and create a customized trading solution for your business.'
+      answer:
+        'Getting started is simple. Contact our team through our website or email, and our representatives will guide you through our onboarding process, assess your needs, and create a customized trading solution for your business.',
     },
     {
       id: 'faq3',
       question: 'What markets does HunterGlobal operate in?',
-      answer: 'We operate globally with a strong presence in Asia-Pacific, particularly in Australia and surrounding regions. Our network extends to major trading hubs worldwide, allowing us to facilitate international trade across diverse markets.'
+      answer:
+        'We operate globally with a strong presence in Asia-Pacific, particularly in Australia and surrounding regions. Our network extends to major trading hubs worldwide, allowing us to facilitate international trade across diverse markets.',
     },
     {
       id: 'faq4',
       question: 'What types of products do you handle?',
-      answer: 'We handle a wide range of products across various industries, including consumer goods, industrial equipment, raw materials, and specialized products. Each category is managed with strict quality control and compliance measures.'
+      answer:
+        'We handle a wide range of products across various industries, including consumer goods, industrial equipment, raw materials, and specialized products. Each category is managed with strict quality control and compliance measures.',
     },
     {
       id: 'faq5',
       question: 'How does HunterGlobal ensure quality control?',
-      answer: 'We maintain strict quality control through comprehensive supplier verification, regular product inspections, and adherence to international standards. Our quality assurance team monitors every stage of the trading process.'
-    }
+      answer:
+        'We maintain strict quality control through comprehensive supplier verification, regular product inspections, and adherence to international standards. Our quality assurance team monitors every stage of the trading process.',
+    },
   ];
 
   return (
@@ -40,7 +52,9 @@ export default function FaqPage() {
       {/* Hero Section */}
       <header className="border-t bg-blue-900 py-16">
         <div className="mx-auto w-full max-w-4xl text-center lg:text-start">
-          <h1 className="mb-4 text-5xl font-bold text-red-600">Frequently Asked Questions</h1>
+          <h1 className="mb-4 text-5xl font-bold text-red-600">
+            Frequently Asked Questions
+          </h1>
         </div>
       </header>
 
@@ -49,8 +63,9 @@ export default function FaqPage() {
           {/* FAQ Introduction */}
           <div className="mb-12 text-center">
             <p className="text-lg text-gray-600">
-              Find answers to common questions about our services and operations.
-              If you can&apos;t find what you&apos;re looking for, please contact our support team.
+              Find answers to common questions about our services and
+              operations. If you can&apos;t find what you&apos;re looking for,
+              please contact our support team.
             </p>
           </div>
 
@@ -59,14 +74,23 @@ export default function FaqPage() {
             {faqs.map((faq) => (
               <div
                 key={faq.id}
-                className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md"
+                onClick={() => toggleFaq(faq.id)}
+                className={`rounded-lg border border-gray-200 p-6 shadow-sm transition-all duration-300 ${activeFaq === faq.id
+                  ? 'bg-blue-100'
+                  : 'bg-white hover:bg-blue-50'
+                  }`}
               >
-                <h3 className="mb-3 text-xl font-semibold text-gray-900">
+                <h3
+                  className={`mb-3 text-xl font-semibold transition-colors duration-300 ${activeFaq === faq.id
+                    ? 'text-blue-900'
+                    : 'text-gray-900 hover:text-blue-600'
+                    }`}
+                >
                   {faq.question}
                 </h3>
-                <p className="text-gray-600">
-                  {faq.answer}
-                </p>
+                {activeFaq === faq.id && (
+                  <p className="text-gray-600">{faq.answer}</p>
+                )}
               </div>
             ))}
           </div>
