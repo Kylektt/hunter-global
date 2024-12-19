@@ -15,7 +15,7 @@ const MainPageContent = () => {
             <h1 className="mb-4 text-5xl font-bold text-red-600">Get The Best</h1>
             <h1 className="mb-4 text-4xl font-bold text-white">global business and trading solutions.</h1>
             <p className="mx-auto mb-6 w-48 border border-red-600 lg:mx-0"></p>
-            <p className="mb-6 text-xl italic text-gray-300">&quot;We are passionate about helping clients achieve their goals ...&quot;</p>
+            <p className="mb-6 text-xl italic text-gray-300">"We are passionate about helping clients achieve their goals ...&quot;</p>
             <div className="space-x-4 text-white">
               <Link
                 key="services"
