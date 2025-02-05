@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
-const Navigation = () => {
+const Nav = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -19,10 +19,10 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="bg-blue-900 shadow-md">
+    <nav className="bg-white shadow-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-white">
+        <Link href="/" className="text-2xl font-bold text-blue-900">
           HunterGlobal
         </Link>
 
@@ -49,7 +49,7 @@ const Navigation = () => {
         </button>
 
         {/* Desktop Links */}
-        <div className="hidden space-x-4 text-white md:flex">
+        <div className="hidden space-x-4 text-blue-900 md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -65,7 +65,7 @@ const Navigation = () => {
       {/* Mobile Links */}
       <div
         className={`${isMobileMenuOpen ? 'flex' : 'hidden'
-          } flex-col space-y-4 bg-blue-900 px-4 py-4 text-white md:hidden`}
+          } flex-col space-y-4 bg-blue-900 px-4 py-4 text-blue-900 md:hidden`}
       >
         {navLinks.map((link) => (
           <Link
@@ -81,4 +81,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default Nav;
