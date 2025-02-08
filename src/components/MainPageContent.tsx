@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -19,77 +20,72 @@ const MainPageContent = () => {
     { id: 5, title: "EV Charging", desc: "Charging solutions for electric vehicles." },
   ];
 
-  const cards = [
-    {
-      title: "Reduce your electricity bills",
-      desc: "Our cutting-edge solutions will lower your electricity bill through reduced energy reliance from the grid.",
-      icon: "⚡",
-    },
-    {
-      title: "Improve your working and playing environment",
-      desc: "Increase the light levels, reduce the glare, and expand the hours your sports facility can play.",
-      icon: "☀️",
-    },
-    {
-      title: "Lower your carbon emissions and contribute to ESG reporting targets",
-      desc: "Reduce your CO2 emissions through conserving your energy or generating your own clean power from the sun.",
-      icon: "🌱",
-    },
-    {
-      title: "Ensure energy security and protection from rising costs",
-      desc: "Your own solar system will protect you from soaring energy costs.",
-      icon: "🔒",
-    },
-    {
-      title: "Share or make money from your excess energy",
-      desc: "The virtual energy network enables excess energy generated and/or stored from a solar system to be distributed to other sites in your network.",
-      icon: "💰",
-    },
+  const logos = [
+    { src: "path/to/william-adams.png", alt: "William Adams" },
+    { src: "path/to/spotlight.png", alt: "Spotlight" },
+    { src: "path/to/asahi.png", alt: "Asahi" },
+    { src: "path/to/pet-stock.png", alt: "Pet Stock" },
+    { src: "path/to/mitre10.png", alt: "Mitre 10" },
   ];
 
+  const stories = [
+    { id: 1, category: "Recreation", title: "Place #001", desc: "Harness the power of the sun." },
+    { id: 2, category: "Sport", title: "Place #002", desc: "Sustainable wind energy solutions." },
+    { id: 3, category: "Industrial", title: "Place #003", desc: "Efficient energy storage systems." },
+    { id: 4, category: "Sport", title: "Place #004", desc: "Cost-effective commercial lighting." },
+    { id: 5, category: "Industrial", title: "Place #005", desc: "Charging solutions for electric vehicles." },
+  ];
   return (
-    <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50">
+    <div className="relative flex min-h-screen flex-col justify-center overflow-hidden">
       <div className="bg-gray-50 text-gray-800">
         <Nav />
 
         {/* Hero Section */}
         <header>
-          <section className="flex flex-col md:flex-row items-center justify-between px-6 py-6 bg-white">
-            {/* Left Side: Text Content */}
-            <div className="w-full md:w-1/2 text-center md:text-left">
-              <h1 className="text-4xl font-bold text-blue-600 leading-tight">
-                Commercial Energy Saving Solutions
-              </h1>
-              <ul className="mt-4 space-y-3 text-lg text-gray-700">
-                <li className="flex items-center gap-2">
-                  ✅ Solar PV and Battery
-                </li>
-                <li className="flex items-center gap-2">
-                  ✅ LED Lighting
-                </li>
-                <li className="flex items-center gap-2">
-                  ✅ Sports Lighting
-                </li>
-              </ul>
-            </div>
+          <section className="py-32 bg-white">
+            <div className="flex flex-col md:flex-row items-center ml-48">
+              {/* Left Side: Text Content */}
+              <div className="max-w-xl md:w-1/2 text-center md:text-left place-items-center md:place-items-start">
+                <h1 className="text-5xl font-bold text-blue-800 leading-tight max-w-96">
+                  Commercial Energy Saving Solutions
+                </h1>
+                <ul className="mt-6 space-y-6 text-xl text-blue-800">
+                  <li className="flex items-center gap-3">
+                    <span className="text-4xl">💡</span>
+                    Solar PV and battery
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="text-4xl">🔌</span>
+                    LED lighting
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="text-4xl">🏟️</span>
+                    Sports lighting
+                  </li>
+                </ul>
+              </div>
 
-            {/* Right Side: Video */}
-            <div className="w-full md:w-1/2 mt-8 md:mt-0 flex justify-center">
-              <video className="w-full max-w-lg h-[400px] md:h-[500px] rounded-lg shadow-lg object-cover" controls>
-                <source src="your-video.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              {/* Right Side: Video */}
+              <div className="w-full flex justify-center relative px-8">
+                <video
+                  className="w-full h-auto rounded-lg shadow-lg object-cover"
+                  controls
+                >
+                  <source src="your-video.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
             </div>
           </section>
         </header>
 
 
         {/* About Section */}
-        <section id="about" className="bg-white py-16">
-          <div className="mx-auto max-w-6xl">
+        <section id="about" className="bg-white">
+          <div className="mx-auto max-w-6xl border-b-2 border-blue-900 py-32">
             {/* Heading with line below */}
-            <div className="text-center mb-12 border-b-2 border-blue-900 pb-4">
-              <h1 className="text-3xl font-semibold text-blue-900 mb-4">What Sets Us Apart</h1>
+            <div className="text-center mb-12 border-b-2 border-blue-900 pb-8">
+              <h1 className="text-4xl font-semibold text-blue-900 mb-4">What sets us apart</h1>
             </div>
 
             {/* Content Items */}
@@ -127,8 +123,8 @@ const MainPageContent = () => {
         </section>
 
         {/* Services Section */}
-        <section id="services" className="bg-gray-100 py-16">
-          <div className="mx-auto max-w-6xl flex items-center justify-between gap-x-4">
+        <section id="services" className="bg-white">
+          <div className="mx-auto max-w-6xl flex items-center justify-between gap-x-4 border-b-2 border-blue-900 py-32">
             {/* Left Side - Images */}
             <div className="flex flex-col lg:w-1/2 gap-6">
               <div className="flex flex-row gap-6">
@@ -145,15 +141,19 @@ const MainPageContent = () => {
                 We are your one stop shop for all your energy efficiency needs. With over 13 years’ experience in commercial LED lighting, solar and battery storage, we know what it takes to cut your power bill and reduce your CO2 emissions. We will also manage every step of the process for you.
               </p>
               <button className="bg-blue-500 text-white rounded-md hover:bg-blue-600 py-2 max-w-96">
-                Learn more about Shine On
+                Learn more about Global Hunter
               </button>
             </div>
           </div>
         </section>
 
         {/* Clients Section */}
-        <section id="clients" className="bg-white py-16">
-          <div className="mx-auto max-w-6xl lg:flex">
+        <section id="clients" className="bg-white py-32">
+          <div className="mx-auto max-w-6xl">
+            <div className='text-start text-xl space-y-4 py-4'>
+              <h1 className='text-red-500'>FOR ALL BUSINESS TYPES</h1>
+              <h1 className='text-blue-900 font-bold text-2xl'>Innovative solutions for your industry</h1>
+            </div>
             <Swiper
               modules={[Navigation, Pagination]}
               spaceBetween={20}
@@ -187,11 +187,17 @@ const MainPageContent = () => {
 
         {/* Products Section */}
         <section id="products" className="bg-indigo-900">
-          <div className="mx-auto max-w-6xl lg:flex">
-            <div className="w-full lg:w-1/2 h-96 lg:h-auto bg-gray-300 bg-cover bg-center" style={{ backgroundImage: "url('/your-image-url.jpg')" }}>
+          <div className="mx-auto flex">
+            {/* Left Image Div - 1/5 width (1:4 ratio with 4/5) */}
+            <div
+              className="w-1/4 h-96 lg:h-auto bg-gray-300 bg-cover bg-center"
+              style={{ backgroundImage: "url('/your-image-url.jpg')" }}
+            >
               {/* Replace `/your-image-url.jpg` with the path to your image */}
             </div>
-            <div className="w-full lg:w-1/2 p-8 lg:p-16 text-white">
+
+            {/* Right Content Div - 4/5 width (4:5 ratio with the image div) */}
+            <div className="w-3/4 p-8 lg:p-16 text-white">
               {/* Heading */}
               <h2 className="text-2xl lg:text-4xl font-semibold mb-8">How we can help your business</h2>
               {/* Cards */}
@@ -237,47 +243,101 @@ const MainPageContent = () => {
           </div>
         </section>
 
-
         {/* Accreditations */}
-        <section className="bg-white lg:min-h-72">
-          <div className="mx-auto max-w-4xl lg:flex">
-            <div className="flex h-full items-center justify-center gap-x-2 border-blue-900 px-8 pt-16 lg:block lg:min-h-72 lg:w-48 lg:min-w-48 lg:border-x-4 lg:pt-4">
-              <h2 className="text-3xl font-bold text-blue-500">Our</h2>
-              <h2 className="text-3xl font-bold text-red-500">Accreditation</h2>
+        <section id="clients" className="bg-white">
+          <div className="mx-auto max-w-6xl border-b-2 border-blue-900 py-32">
+            <div className='text-center text-4xl text-blue-900 mb-4 font-bold'>
+              Who we have worked for
             </div>
-            <div className="grid gap-6 px-8 pb-16 pt-8 md:grid-cols-4 lg:pl-16 lg:pt-16 content-center">
-              <div className="rounded-lg bg-gray-100 p-6 text-center">Accreditation 1</div>
-              <div className="rounded-lg bg-gray-100 p-6 text-center">Accreditation 2</div>
-              <div className="rounded-lg bg-gray-100 p-6 text-center">Accreditation 3</div>
-              <div className="rounded-lg bg-gray-100 p-6 text-center">Accreditation 4</div>
-            </div>
+            <Swiper
+              modules={[Navigation, Pagination]}
+              spaceBetween={20}
+              slidesPerView={3}
+              navigation={true}
+              pagination={{ clickable: true }}
+              breakpoints={{
+                1024: { slidesPerView: 3 },
+                768: { slidesPerView: 2 },
+                480: { slidesPerView: 1 },
+              }}
+            >
+              {logos.map((card) => (
+                <SwiperSlide key={card.alt}>
+                  <div className="bg-white overflow-hidden flex flex-col my-2">
+                    {/* Image Placeholder (At Least 40% of the Card) */}
+                    <div className="bg-gray-300 flex items-center justify-center min-h-48">
+                      <span className="text-gray-500 text-xl">Coming Soon...</span>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section className="bg-blue-900">
-          <div className="mx-auto max-w-4xl lg:flex">
-            <div className="flex h-full bg-white items-center justify-center gap-x-2 border-red-600 px-8 pt-16 lg:block lg:min-h-24 lg:w-48 lg:min-w-48 lg:border-x-4 lg:border-b-4 lg:pt-4">
-              <h2 className="text-3xl font-bold hidden lg:block text-blue-500">FAQ</h2>
-              <h2 className="mb-8 text-center text-3xl font-bold lg:hidden text-white">Frequently Asked Questions</h2>
+        {/* Stories Section */}
+        <section className="bg-white">
+          <div className="mx-auto max-w-6xl py-32">
+            <div className="py-4 text-center">
+              <h1 className="text-blue-900 font-bold text-4xl">Success Stories</h1>
             </div>
-            <div className="space-y-4 px-8 pb-16 pt-8 lg:pl-16 lg:pt-16">
-              <div className="rounded-lg bg-red-500 p-6 shadow-md">
-                <h3 className="mb-2 font-bold">What are our primary markets?</h3>
-                <p className="text-white">We operate across multiple international trade corridors.</p>
-              </div>
-              <div className="rounded-lg bg-red-500 p-6 shadow-md">
-                <h3 className="mb-2 font-bold">How do we ensure quality?</h3>
-                <p className="text-white">Rigorous supply chain management and strategic partnerships.</p>
-              </div>
-              <div className="rounded-lg bg-red-500 p-6 shadow-md">
-                <h3 className="mb-2 font-bold">What makes us unique?</h3>
-                <p className="text-white">Our adaptive approach and deep market insights.</p>
+
+            <Swiper
+              modules={[Navigation, Pagination]}
+              spaceBetween={20}
+              slidesPerView={3}
+              navigation={true}
+              pagination={{ clickable: true }}
+              breakpoints={{
+                1024: { slidesPerView: 3 },
+                768: { slidesPerView: 2 },
+                480: { slidesPerView: 1 },
+              }}
+            >
+              {logos.map((card, index) => (
+                <SwiperSlide key={index}>
+                  <div className="bg-white overflow-hidden flex flex-col my-2">
+                    {/* Image Placeholder (At Least 40% of the Card) */}
+                    <div className="bg-gray-300 flex items-center justify-center min-h-48">
+                      <span className="text-gray-500 text-xl">Coming Soon...</span>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </section>
+
+        <section id="faq" className="bg-red-600">
+          <div className="mx-auto flex">
+            {/* Left Image Div - 1/5 width (1:4 ratio with 4/5) */}
+            <div
+              className="w-1/4 h-96 lg:h-auto bg-gray-300 bg-cover bg-center"
+              style={{ backgroundImage: "url('/your-image-url.jpg')" }}
+            >
+              {/* Replace `/your-image-url.jpg` with the path to your image */}
+            </div>
+
+            {/* Right Content Div - 4/5 width (4:5 ratio with the image div) */}
+            <div className="w-3/4 p-8 lg:p-16 text-white max-w-2xl">
+              {/* Heading */}
+              <h2 className="text-lg lg:text-2xl font-semibold mb-8 text-white border-b-2 border-white pb-4">
+                Arrange a callback
+              </h2>
+              <h2 className="text-2xl lg:text-4xl font-semibold mb-8 text-white">
+                Our energy experts are ready to answer your questions
+              </h2>
+              <div className="max-w-48">
+                <Link
+                  href="/contact"
+                  className="bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-200 flex items-center gap-x-2 text-xl"
+                >
+                  Enqueiry Now
+                </Link>
               </div>
             </div>
           </div>
         </section>
-
         <Footer />
       </div>
     </div >
