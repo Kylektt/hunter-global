@@ -49,15 +49,6 @@ export default function FaqPage() {
 
   return (
     <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50">
-      {/* Hero Section */}
-      <header className="border-t bg-blue-900 py-16">
-        <div className="mx-auto w-full max-w-4xl text-center lg:text-start">
-          <h1 className="mb-4 text-5xl font-bold text-red-600">
-            Frequently Asked Questions
-          </h1>
-        </div>
-      </header>
-
       <main className="container mx-auto flex-grow space-y-12 px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           {/* FAQ Introduction */}

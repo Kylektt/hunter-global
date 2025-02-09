@@ -18,13 +18,6 @@ export default function ClientsPage() {
 
   return (
     <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50">
-      {/* Hero Section */}
-      <header className="border-t bg-blue-900 py-16">
-        <div className="mx-auto w-full max-w-4xl text-center lg:text-start">
-          <h1 className="mb-4 text-5xl font-bold text-red-600">Our Clients</h1>
-        </div>
-      </header>
-
       <main className="container mx-auto flex-grow space-y-12 px-16 py-16">
         <div className="mx-auto w-full max-w-7xl px-4 md:px-5 lg:px-5">
           {/* Clients Introduction */}

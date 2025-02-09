@@ -47,14 +47,14 @@ const Nav = () => {
 
   return (
     <nav className="bg-white shadow-md">
-      <div className="mx-auto flex max-w-8xl items-center justify-between px-4 py-4">
+      <div className="mx-auto flex max-w-8xl justify-between h-16">
         {/* Logo */}
-        <Link href="/" className="text-4xl font-bold text-blue-900">
+        <Link href="/" className="text-4xl font-bold text-blue-900 py-2 px-4">
           HunterGlobal
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden lg:flex space-x-16">
+        <div className="hidden lg:flex space-x-16 py-4">
           {navLinks.map((link) => (
             <div key={link.href} className="relative">
               <Link
@@ -74,10 +74,10 @@ const Nav = () => {
         </div>
 
         {/* Contact Us Button */}
-        <div className="hidden lg:flex">
+        <div className="hidden lg:flex h-full">
           <Link
             href="/contact"
-            className="bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-200 flex items-center gap-x-2 text-xl"
+            className="bg-blue-900 text-white px-4 py-2 hover:bg-blue-700 transition-colors duration-200 flex items-center gap-x-2 text-xl h-full"
           >
             <CiPhone /> Contact
           </Link>
@@ -106,9 +106,10 @@ const Nav = () => {
         </button>
       </div>
 
+
       {/* Dropdown for Services */}
       {expandedService && (
-        <div className="bg-white">
+        <div className="bg-white border-t-2 border-blue-900 py-8">
           <div className="grid grid-cols-12 gap-0 max-w-7xl mx-auto">
             {/* Sub-navigation */}
             <div className="col-span-4 space-y-0 border-r">
