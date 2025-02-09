@@ -43,13 +43,13 @@ const MainPageContent = () => {
         {/* Hero Section */}
         <header>
           <section className="py-32 bg-white">
-            <div className="flex flex-col md:flex-row items-center ml-48">
+            <div className="flex flex-col md:flex-row items-center md:ml-48">
               {/* Left Side: Text Content */}
-              <div className="max-w-xl md:w-1/2 text-center md:text-left place-items-center md:place-items-start">
+              <div className="max-w-xl md:w-1/2 text-left place-items-start">
                 <h1 className="text-5xl font-bold text-blue-800 leading-tight max-w-96">
                   Commercial Energy Saving Solutions
                 </h1>
-                <ul className="mt-6 space-y-6 text-xl text-blue-800">
+                <ul className="mt-6 space-y-6 text-xl text-blue-800 max-w-96">
                   <li className="flex items-center gap-3">
                     <span className="text-4xl">💡</span>
                     Solar PV and battery
@@ -66,9 +66,9 @@ const MainPageContent = () => {
               </div>
 
               {/* Right Side: Video */}
-              <div className="w-full flex justify-center relative px-8">
+              <div className="w-full flex justify-center relative px-8 pt-12 md:pt-0">
                 <video
-                  className="w-full h-auto rounded-lg shadow-lg object-cover"
+                  className="w-full h-auto min-h-[844px] rounded-lg shadow-lg object-cover"
                   controls
                 >
                   <source src="your-video.mp4" type="video/mp4" />
@@ -89,7 +89,7 @@ const MainPageContent = () => {
             </div>
 
             {/* Content Items */}
-            <div className="grid gap-6 px-8 pb-16 pt-8 md:grid-cols-4 lg:pl-16 lg:pt-16">
+            <div className="grid gap-6 pb-16 pt-8 md:grid-cols-4 lg:pt-16">
               <div className="rounded-lg bg-white p-6 text-center shadow-md">
                 <svg className="mx-auto mb-4 h-12 w-12 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http:www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>

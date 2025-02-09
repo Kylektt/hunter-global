@@ -27,7 +27,7 @@ const Nav = () => {
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex space-x-16">
+        <div className="hidden lg:flex space-x-16">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -40,7 +40,7 @@ const Nav = () => {
         </div>
 
         {/* Contact Us Button */}
-        <div className="hidden md:flex">
+        <div className="hidden lg:flex">
           <Link
             href="/contact"
             className="bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-200 flex items-center gap-x-2 text-xl"
@@ -51,7 +51,7 @@ const Nav = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="focus:outline-none md:hidden"
+          className="focus:outline-none lg:hidden"
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
         >
@@ -75,7 +75,7 @@ const Nav = () => {
       {/* Mobile Links */}
       <div
         className={`${isMobileMenuOpen ? 'flex' : 'hidden'
-          } flex-col space-y-4 bg-blue-900 px-4 py-4 text-white md:hidden`}
+          } flex-col space-y-4 bg-blue-900 px-4 py-4 text-white lg:hidden`}
       >
         {navLinks.map((link) => (
           <Link
