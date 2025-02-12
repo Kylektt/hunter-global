@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 export default function ServicePage() {
   const services = [
@@ -6,31 +7,31 @@ export default function ServicePage() {
       title: "LED Lighting",
       description:
         "We have upgraded over 6,000 commercial premises to LED lighting Australia-wide. We understand the complexities of upgrading lights to LED and the best way for our clients to make savings while improving their working environment.",
-      image: "led-lighting.jpg",
+      image: "/led-lighting.jpg",
     },
     {
       title: "Sports Lighting",
       description:
         "Upgrade or install LED sports lights to significantly improve your lighting levels, lower your operating cost and improve the experience for both athletes and spectators.",
-      image: "sports-lighting.jpg",
+      image: "/sports-lighting.jpg",
     },
     {
       title: "Solar PV and Battery",
       description:
         "We have designed and installed solar PV and battery solutions since 2010, with thousands of residential and commercial premises now generating their own energy. We are now a focused commercial solar specialist and a New Energy Tech Approved Seller.",
-      image: "solar-pv-battery.jpg",
+      image: "/solar-pv-battery.jpg",
     },
     {
       title: "Energy Monitoring & Management",
       description:
         "State-of-the-art intelligent monitoring solutions to ensure you get the most from your solar investment and you’re not wasting any money. Our solutions provide a robust and reliable method of ensuring your system is performing as forecast.",
-      image: "energy-monitoring.jpg",
+      image: "/energy-monitoring.jpg",
     },
     {
       title: "Virtual Energy Network",
       description:
         "The Virtual Energy Network (VEN) is a cutting-edge distributed energy solution for solar. A smarter solution to further reduce your operating costs as well as your carbon emissions.",
-      image: "virtual-energy.jpg",
+      image: "/virtual-energy.jpg",
     },
   ];
 
@@ -62,7 +63,6 @@ export default function ServicePage() {
                   </li>
                 ))}
               </ul>
-
             </div>
 
             {/* Right Side: Image Placeholder */}
@@ -74,6 +74,7 @@ export default function ServicePage() {
           </div>
         </section>
       </header>
+
       <main className="container mx-auto flex-grow space-y-12 px-16 py-16">
         <div className="mx-auto w-full max-w-7xl px-4 md:px-5 lg:px-5">
           <div className="grid grid-cols-1 gap-8">
@@ -92,18 +93,20 @@ export default function ServicePage() {
                   </button>
                 </div>
                 <div className="w-full md:w-3/4 bg-gray-300 overflow-hidden h-full">
-                  <img
+                  <Image
                     src={service.image}
                     alt={service.title}
+                    width={600} // Define the width and height
+                    height={400}
                     className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
               </div>
             ))}
           </div>
-
         </div>
       </main>
+
       <section className="bg-blue-900 text-white py-16 text-center">
         <h2 className="text-3xl font-bold">Our Full Service</h2>
         <p className="mt-4 max-w-3xl mx-auto">

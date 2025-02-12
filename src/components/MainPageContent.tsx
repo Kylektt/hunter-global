@@ -5,8 +5,7 @@ import Nav from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -28,13 +27,6 @@ const MainPageContent = () => {
     { src: "path/to/mitre10.png", alt: "Mitre 10" },
   ];
 
-  const stories = [
-    { id: 1, category: "Recreation", title: "Place #001", desc: "Harness the power of the sun." },
-    { id: 2, category: "Sport", title: "Place #002", desc: "Sustainable wind energy solutions." },
-    { id: 3, category: "Industrial", title: "Place #003", desc: "Efficient energy storage systems." },
-    { id: 4, category: "Sport", title: "Place #004", desc: "Cost-effective commercial lighting." },
-    { id: 5, category: "Industrial", title: "Place #005", desc: "Charging solutions for electric vehicles." },
-  ];
   return (
     <div className="relative flex min-h-screen flex-col justify-center overflow-hidden">
       <div className="bg-gray-50 text-gray-800">

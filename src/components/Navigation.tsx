@@ -43,7 +43,7 @@ const Nav = () => {
     } else if (services.length > 0) {
       setActiveSubNav(services[0]);
     }
-  }, [pathname]);
+  }, [pathname, services]);
 
   return (
     <nav className="bg-white shadow-md">
