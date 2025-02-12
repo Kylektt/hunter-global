@@ -5,7 +5,6 @@ export default function AboutPage() {
   return (
     <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-white text-gray-800">
       {/* Hero Section */}
-      {/* Hero Section */}
       <header>
         <section className="py-32 bg-white">
           <div className="flex flex-col lg:flex-row items-start lg:items-center">
