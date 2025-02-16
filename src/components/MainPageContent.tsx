@@ -29,7 +29,7 @@ const MainPageContent = () => {
 
   return (
     <div className="relative flex min-h-screen flex-col justify-center overflow-hidden">
-      <div className="bg-gray-50 text-gray-800">
+      <div className="bg-gray-50 text-gray-800 pt-16">
         <Nav />
 
         {/* Hero Section */}

@@ -43,10 +43,10 @@ const Nav = () => {
     } else if (services.length > 0) {
       setActiveSubNav(services[0]);
     }
-  }, [pathname, services]);
+  }, [pathname]);
 
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
       <div className="mx-auto flex max-w-8xl justify-between h-16">
         {/* Logo */}
         <Link href="/" className="text-4xl font-bold text-blue-900 py-2 px-4">
@@ -109,7 +109,7 @@ const Nav = () => {
 
       {/* Dropdown for Services */}
       {expandedService && (
-        <div className="bg-white border-t-2 border-blue-900 py-8">
+        <div className="bg-white border-t-2 border-blue-900 py-8 absolute top-16 left-0 w-full shadow-lg">
           <div className="grid grid-cols-12 gap-0 max-w-7xl mx-auto">
             {/* Sub-navigation */}
             <div className="col-span-4 space-y-0 border-r">
@@ -157,7 +157,8 @@ const Nav = () => {
 
       {/* Mobile Links */}
       <div
-        className={`${isMobileMenuOpen ? 'flex' : 'hidden'} flex-col space-y-4 bg-white px-4 py-4 text-blue-900 lg:hidden shadow-md`}
+        className={`${isMobileMenuOpen ? 'flex' : 'hidden'
+          } fixed top-16 left-0 w-full flex-col space-y-4 bg-white px-4 py-4 text-blue-900 lg:hidden shadow-md z-40`}
       >
         {navLinks.map((link) => (
           <div key={link.href} className="relative">
