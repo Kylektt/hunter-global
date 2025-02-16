@@ -18,7 +18,7 @@ export default function ClientsPage() {
 
   return (
     <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50">
-      <main className="container mx-auto flex-grow space-y-12 px-16 py-16">
+      <main className="container mx-auto flex-grow space-y-12 px-16 py-32">
         <div className="mx-auto w-full max-w-7xl px-4 md:px-5 lg:px-5">
           {/* Clients Introduction */}
           <div className="mb-10 flex flex-col items-center justify-center gap-x-0 gap-y-6 max-md:mx-auto max-md:max-w-lg lg:mb-16 lg:flex-row lg:justify-between lg:gap-y-0">

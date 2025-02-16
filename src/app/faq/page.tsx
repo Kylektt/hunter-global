@@ -49,7 +49,7 @@ export default function FaqPage() {
 
   return (
     <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50">
-      <main className="container mx-auto flex-grow space-y-12 px-4 py-16 sm:px-6 lg:px-8">
+      <main className="container mx-auto flex-grow space-y-12 px-4 py-32 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           {/* FAQ Introduction */}
           <div className="mb-12 text-center">
